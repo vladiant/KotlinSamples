@@ -95,3 +95,5 @@ File: `.vscode/launch.json`
 ## References
 * [Debugging Kotlin program using VSCode](https://medium.com/@thunderz99/debugging-kotlin-program-using-vscode-318ed43fe2f0)
 * <https://github.com/thunderz99/kt-sample-app>
+* [Get started with Gradle and Kotlin/JVM](https://kotlinlang.org/docs/get-started-with-jvm-gradle-project.html)
+* [Gradle best practices﻿](https://kotlinlang.org/docs/gradle-best-practices.html)
