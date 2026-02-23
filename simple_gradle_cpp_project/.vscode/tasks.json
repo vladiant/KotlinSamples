@@ -1,0 +1,39 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "./gradlew build -x test --no-configuration-cache",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "run",
+            "type": "shell",
+            "command": "./gradlew run --no-configuration-cache",
+            "problemMatcher": []
+        },
+        {
+            "label": "test",
+            "type": "shell",
+            "command": "./gradlew test --no-configuration-cache",
+            "problemMatcher": []
+        },
+        {
+            "label": "buildNativeDebug",
+            "type": "shell",
+            "command": "cd ${workspaceFolder} && mkdir -p build/native_debug && cd build/native_debug && cmake -DCMAKE_BUILD_TYPE=Debug ${workspaceFolder} && cmake --build . --config Debug",
+            "problemMatcher": ["$gcc"],
+            "group": {
+                "kind": "build"
+            },
+            "presentation": {
+                "reveal": "always"
+            }
+        }
+    ]
+}
