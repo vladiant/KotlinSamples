@@ -1,0 +1,45 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Compile Kotlin",
+            "type": "shell",
+            "command": "kotlinc",
+            "args": [
+                "${workspaceFolder}/main.kt",
+                "-include-runtime",
+                "-d",
+                "${workspaceFolder}/out/main.jar"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "Run Kotlin",
+            "type": "shell",
+            "command": "java",
+            "args": [
+                "-jar",
+                "${workspaceFolder}/out/main.jar"
+            ],
+            "dependsOn": "Compile Kotlin",
+            "group": "test",
+            "problemMatcher": [],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared"
+            }
+        }
+    ]
+}
