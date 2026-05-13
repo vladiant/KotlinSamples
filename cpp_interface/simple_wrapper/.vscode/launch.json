@@ -1,0 +1,55 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "kotlin",
+            "request": "launch",
+            "name": "Kotlin Launch",
+            "projectRoot": "${workspaceFolder}",
+            "mainClass": "com/example/simplewrapper/MainKt",
+            "vmArguments": "-Djava.library.path=/home/vladiant/Workplace/KotlinSamples/cpp_interface/simple_wrapper/build/native",
+            "preLaunchTask": "build"
+        },
+        {
+            "type": "cppdbg",
+            "name": "C++ Debug",
+            "request": "launch",
+            "program": "/usr/lib/jvm/java-21-openjdk-amd64/bin/java",
+            "args": [
+                "-Djava.library.path=${workspaceFolder}/build/native_debug",
+                "-cp",
+                "${workspaceFolder}/build/install/simple_wrapper/lib/simple_wrapper.jar:${workspaceFolder}/build/install/simple_wrapper/lib/kotlin-stdlib-2.1.20.jar:${workspaceFolder}/build/install/simple_wrapper/lib/annotations-13.0.jar",
+                "com.example.simplewrapper.MainKt"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Pass SIGSEGV to the JVM (used for JIT/safepoints)",
+                    "text": "handle SIGSEGV pass noprint nostop",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Pass SIGBUS to the JVM",
+                    "text": "handle SIGBUS pass noprint nostop",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "buildCppDebug",
+            "sourceMap": {},
+            "logging": {
+                "trace": false,
+                "traceResponse": false,
+                "engineLogging": false
+            }
+        }
+    ]
+}
